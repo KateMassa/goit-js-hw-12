@@ -96,7 +96,7 @@ function appendGallery(images) {
   loader.style.display = 'none';
 
   if (searchParams.page * 15 >= images.totalHits) {
-    loadMoreBtn.style.display = 'none';
+    loadMoreButton.style.display = 'none';
     iziToast.show({
       message: "We're sorry, but you've reached the end of search results.",
       messageColor: '#FFFFFF',
