@@ -8,9 +8,10 @@ const form = document.getElementById('search-form');
 const gallery = document.getElementById('gallery');
 const loader = document.querySelector('.loader');
 const loadMoreButton = document.getElementById('load-more');
+const apiKey = '42152673-4f3b2f2010df91e54c05d1b70';
 
 const searchParams = {
-  key: '42152673-4f3b2f2010df91e54c05d1b70',
+  key: apiKey,
   image_type: 'photo',
   orientation: 'horizontal',
   safesearch: true,
@@ -79,6 +80,8 @@ function createGallery(images) {
 }
 
 function appendGallery(images) {
+  loader.style.display = 'block';
+
   const link = images.hits
     .map(
       image => `<a class="gallery-link" href="${image.largeImageURL}">
